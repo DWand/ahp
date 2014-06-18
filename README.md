@@ -11,6 +11,9 @@ You can:
 * discover which alternative is better based on utility and cost
 * save / load results (JSON)
 
+Limitations:
+* Only one level of hierarchy is currently available
+
 
 ## Dependencies
 
@@ -20,6 +23,7 @@ This application is written to run with [node-webkit](https://github.com/rogerwa
 ## Technologies
 
 This project uses:
+
 1. [node-webkit](https://github.com/rogerwang/node-webkit)
 2. [AngularJS](http://angularjs.org/)
 3. [Semantic UI](http://semantic-ui.com/)
@@ -28,5 +32,4 @@ This project uses:
 ## Notes
 
 * Ukrainian language of the UI
-* Only one level of hierarchy is currently available
 * This is not a production oriented product, use it for your own risk
