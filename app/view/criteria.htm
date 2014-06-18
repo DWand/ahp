@@ -1,0 +1,62 @@
+<div class="ui labeled icon button" ng-click="addOpen()">
+  <i class="add icon"></i>
+  Додати критерій
+</div>
+
+<a href="#!/criteria/compare" class="ui labeled icon button">
+  <i class="shuffle icon"></i>
+  Порівняти критерії
+</a>
+
+
+<table class="ui basic table segment">
+  <thead>
+    <tr>
+      <th>Назва</th>
+      <th class="ui right aligned">Дії</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="c in criteria">
+      <td editable-text="c.name" buttons="no" title="Натисніть для редагування">{{c.name}}</td>
+      <td>
+        <div class="floated right mini red ui labeled button" ng-click="remove(c)">
+          <i class="remove icon"></i>
+          Видалити
+        </div>
+        <a href="#!/criteria/configure/{{$index}}" class="floated right mini black ui labeled button">
+          <i class="settings icon"></i>
+          Налаштування
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<modal ng-model="isAddVisible">
+  <div class="header">
+    Новий критерій
+  </div>
+  
+  <div class="content ui form">
+    <div class="field">
+      <label>Назва</label>
+      <div class="ui left labeled icon input">
+        <input type="text" placeholder="Назва критерія" ng-model="newCriteria.name" />
+        <i class="tag icon"></i>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <div class="ui negative labeled icon button" ng-click="addClose()">
+      <i class="remove icon"></i>
+      Відміна
+    </div>
+    <div class="ui positive right labeled icon button" ng-click="add()">
+      Додати
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</modal>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="ahp">
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Maksym Prychynenko" />
+  <title>Аналітична ієрархічна процедура</title>
+  
+  <link href="css/semantic.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/xeditable.css" rel="stylesheet" type="text/css" />
+  <link href="css/fonts.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="ui three steps" ng-controller="navCtrl">
+    <a class="ui step" ng-class="{'active':isActive('/alternatives')}" href="#!/alternatives">
+      Альтернативи
+    </a>
+    <a class="ui step" ng-class="{'active':isActive('/criteria')}" href="#!/criteria">
+      Критерії
+    </a>
+    <a class="ui step" ng-class="{'active':isActive('/result')}" href="#!/result">
+      Результат
+    </a>
+  </div>
+  
+  <ng-view></ng-view>
+  
+  <script src="js/vendor/angular/angular.min.js"></script>
+  <script src="js/vendor/angular/angular-route.min.js"></script>
+  
+  <script src="js/vendor/angular-semantic-ui/modal.js"></script>
+  
+  <script src="js/vendor/nw-fileDialog.js"></script>
+  
+  <script src="js/vendor/xeditable.min.js"></script>
+  
+  <script src="js/app.js"></script>
+  
+  <script src="js/services/ahp.js"></script>
+  
+  <script src="js/controllers/nav.js"></script>
+  <script src="js/controllers/alternatives.js"></script>
+  <script src="js/controllers/criteria.js"></script>
+  <script src="js/controllers/criteria-configure.js"></script>
+  <script src="js/controllers/criteria-compare.js"></script>
+  <script src="js/controllers/result.js"></script>
+</body>
+</html>

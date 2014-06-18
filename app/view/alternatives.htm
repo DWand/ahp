@@ -1,0 +1,62 @@
+<div class="ui labeled icon button" ng-click="addOpen()">
+  <i class="add icon"></i>
+  Додати альтернативу
+</div>
+
+
+<table class="ui basic three column table segment">
+  <thead>
+    <tr>
+      <th>Назва</th>
+      <th>Ціна</th>
+      <th class="ui right aligned">Дії</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="a in alternatives">
+      <td editable-text="a.name" buttons="no" title="Натисніть для редагування">{{a.name}}</td>
+      <td editable-number="a.price" buttons="no" title="Натисніть для редагування">{{a.price | number}}</td>
+      <td>
+        <div class="floated right mini red ui labeled button" ng-click="remove(a)">
+          <i class="remove icon"></i>
+          Видалити
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<modal ng-model="isAddVisible">
+  <div class="header">
+    Нова альтернатива
+  </div>
+  
+  <div class="content ui form">
+    <div class="field">
+      <label>Назва</label>
+      <div class="ui left labeled icon input">
+        <input type="text" placeholder="Назва альтернативи" ng-model="newAlt.name" />
+        <i class="tag icon"></i>
+      </div>
+    </div>
+    <div class="field">
+      <label>Ціна</label>
+      <div class="ui left labeled icon input">
+        <input type="number" placeholder="Ціна альтернативи" ng-model="newAlt.price" />
+        <i class="dollar icon"></i>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <div class="ui negative labeled icon button" ng-click="addClose()">
+      <i class="remove icon"></i>
+      Відміна
+    </div>
+    <div class="ui positive right labeled icon button" ng-click="add()">
+      Додати
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</modal>

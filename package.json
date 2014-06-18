@@ -1,0 +1,19 @@
+{
+  "name" : "ahp",
+  "version" : "1.0.0",
+  "description" : "Analytic hierarchy process",
+  "author" : {
+    "name": "Max Prychynenko"
+  },
+  "private": true,
+  "dependencies": {
+  },
+  "main": "app/index.htm",
+  "window": {
+    "width": 800,
+    "height": 600,
+    "min_width": 800,
+    "min_height": 600,
+    "toolbar": false
+  }
+}
